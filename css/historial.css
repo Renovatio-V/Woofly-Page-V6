@@ -1,0 +1,25 @@
+/* ========================
+   HISTORIAL PAGE
+   ======================== */
+.hist-controls { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.hist-select {
+  flex: 1; min-width: 200px; padding: 12px 16px;
+  border: 1.5px solid var(--gris-borde); border-radius: var(--radio);
+  background: var(--menta); font-family: 'Outfit', sans-serif;
+  font-size: 14px; color: var(--azul); outline: none; cursor: pointer;
+}
+.hist-card { background: white; border-radius: var(--radio-lg); padding: 24px; box-shadow: var(--sombra); margin-bottom: 16px; animation: fadeUp .3s ease both; }
+.hist-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.hist-card-left { display: flex; gap: 14px; }
+.hist-icon-wrap { width: 44px; height: 44px; background: #fde8e0; border-radius: var(--radio); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.hist-service { font-size: 16px; font-weight: 600; color: var(--azul); }
+.hist-date    { font-size: 13px; color: var(--verde-s); margin-top: 2px; }
+.hist-pet     { font-size: 13px; color: var(--terracota); font-weight: 500; margin-top: 2px; }
+.stars { color: #f59e0b; font-size: 18px; letter-spacing: 2px; }
+.hist-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.hist-field label { font-size: 12px; color: #aab8b4; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; display: flex; align-items: center; gap: 6px; }
+.hist-field p  { font-size: 14px; color: var(--azul); margin-top: 4px; line-height: 1.5; }
+.hist-field.full { grid-column: 1 / -1; }
+.hist-review { margin-top: 16px; padding: 12px 16px; background: var(--menta); border-radius: var(--radio); font-size: 13px; color: var(--verde-s); font-style: italic; }
+.hist-review strong { font-style: normal; color: var(--azul); font-size: 12px; display: block; margin-bottom: 4px; }
+@media (max-width: 700px) { .hist-detail { grid-template-columns: 1fr; } }

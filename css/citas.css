@@ -1,0 +1,38 @@
+/* ========================
+   CITAS PAGE
+   ======================== */
+.filter-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+.filter-label { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--verde-s); }
+.filter-btn {
+  padding: 8px 20px; border-radius: 50px;
+  border: 1.5px solid var(--gris-borde); background: var(--blanco);
+  font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 500;
+  color: var(--verde-s); cursor: pointer; transition: all var(--trans);
+}
+.filter-btn.active { background: #9b59b6; border-color: #9b59b6; color: white; }
+.filter-btn:not(.active):hover { border-color: var(--verde); color: var(--azul); }
+
+.empty-box { background: var(--blanco); border-radius: var(--radio-lg); padding: 64px 32px; text-align: center; box-shadow: var(--sombra); }
+.empty-icon {
+  width: 72px; height: 72px; background: #fde8e0; border-radius: var(--radio-lg);
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
+}
+.empty-icon svg { color: var(--terracota); }
+.empty-title { font-size: 18px; font-weight: 600; color: var(--azul); margin-bottom: 8px; }
+.empty-sub   { font-size: 14px; color: var(--verde-s); margin-bottom: 28px; }
+
+.cita-card {
+  background: var(--blanco); border-radius: var(--radio-lg);
+  padding: 20px 24px; box-shadow: var(--sombra); margin-bottom: 16px;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  border-left: 4px solid var(--verde); animation: fadeUp .3s ease both;
+}
+.cita-card.pendiente  { border-left-color: #f59e0b; }
+.cita-card.confirmada { border-left-color: var(--verde); }
+.cita-card.completada { border-left-color: var(--verde-s); }
+.cita-info .cita-title { font-size: 16px; font-weight: 600; color: var(--azul); }
+.cita-info .cita-meta  { font-size: 13px; color: var(--verde-s); margin-top: 4px; }
+.cita-badge { padding: 4px 12px; border-radius: 50px; font-size: 12px; font-weight: 600; }
+.badge-pendiente  { background: #fef3c7; color: #92400e; }
+.badge-confirmada { background: #d1fae5; color: #065f46; }
+.badge-completada { background: #e5e7eb; color: #374151; }

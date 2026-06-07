@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Woofly — Panel Principal</title>
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+  <header class="app-header">
+    <div class="header-left">
+      <div class="header-icon-wrap"><i data-lucide="paw-print" color="white" width="28" height="28"></i></div>
+      <div><div class="header-title">Woofly — Panel Principal</div><div class="header-sub">El cuidado que tu mascota merece</div></div>
+    </div>
+    <div class="header-right">
+      <button class="btn-ghost" onclick="WF.logout(); window.location.href='../index.html'">
+        <i data-lucide="log-out" width="16" height="16"></i> Cerrar Sesión
+      </button>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="cards-grid-3">
+      <div class="dash-card" onclick="window.location.href='citas.html'">
+        <div class="dash-card-icon icon-azul"><i data-lucide="calendar-days" color="white" width="28" height="28"></i></div>
+        <div class="dash-card-title">Citas Veterinarias</div>
+        <div class="dash-card-desc">Agenda y gestiona las citas de tus mascotas</div>
+      </div>
+      <div class="dash-card" onclick="window.location.href='historial.html'">
+        <div class="dash-card-icon icon-terra"><i data-lucide="file-text" color="white" width="28" height="28"></i></div>
+        <div class="dash-card-title">Historial Médico</div>
+        <div class="dash-card-desc">Consulta el historial veterinario de tus mascotas</div>
+      </div>
+      <div class="dash-card" onclick="window.location.href='perfil.html'">
+        <div class="dash-card-icon icon-verde"><i data-lucide="user-circle" color="white" width="28" height="28"></i></div>
+        <div class="dash-card-title">Mi Perfil</div>
+        <div class="dash-card-desc">Gestiona tu perfil y el de tus mascotas</div>
+      </div>
+    </div>
+
+    <div class="dash-bottom-row">
+      <div class="tips-box">
+        <div class="tips-title"><i data-lucide="paw-print" width="20" height="20"></i> Consejos para el Cuidado de tu Mascota</div>
+        <div class="tip-item">Llega 15 minutos antes de la cita para que tu mascota se adapte al entorno.</div>
+        <div class="tip-item">Vacunaciones y desparasitaciones regulares son esenciales para la salud de tu mascota.</div>
+        <div class="tip-item">Mantén actualizado el perfil de tus mascotas con su peso y condiciones médicas.</div>
+        <div class="tip-item">Para cancelar una cita, hazlo con al menos 24 horas de anticipación.</div>
+      </div>
+      <div class="social-inline">
+        <div class="social-inline-title">Síguenos</div>
+        <div class="social-inline-btns">
+          <a href="https://facebook.com"  target="_blank" class="social-btn s-fb"><i data-lucide="facebook"  width="18" height="18"></i></a>
+          <a href="https://instagram.com" target="_blank" class="social-btn s-ig"><i data-lucide="instagram" width="18" height="18"></i></a>
+          <a href="https://twitter.com"   target="_blank" class="social-btn s-tw"><i data-lucide="twitter"   width="18" height="18"></i></a>
+          <a href="https://youtube.com"   target="_blank" class="social-btn s-yt"><i data-lucide="youtube"   width="18" height="18"></i></a>
+          <a href="mailto:contacto@woofly.com"            class="social-btn s-em"><i data-lucide="mail"      width="18" height="18"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stories-section">
+      <div class="stories-header">
+        <div class="stories-icon-wrap"><i data-lucide="heart" color="white" width="22" height="22"></i></div>
+        <div><div class="stories-title">Historias de Nuestras Mascotas</div><div class="stories-sub">Comparte los momentos especiales</div></div>
+      </div>
+      <div class="slideshow-wrapper">
+        <button class="slide-arrow" onclick="slidePrev()"><i data-lucide="chevron-left" width="20" height="20"></i></button>
+        <div class="slides-viewport"><div class="slides-track" id="slidesTrack">
+          <div class="story-card"><div class="story-img-wrap"><img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=600&q=80" alt="Max" loading="lazy"/></div><div class="story-body"><div class="story-meta"><div class="story-likes"><i data-lucide="heart" width="16" height="16" style="color:#1A3B4C;fill:#1A3B4C"></i><span>234</span></div><span class="story-time">Hace 2 horas</span></div><div class="story-pet">Max</div><div class="story-desc">¡Max disfrutando su día en el parque! 🐾 #VidaSaludable #WooflyPets</div></div></div>
+          <div class="story-card"><div class="story-img-wrap"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&q=80" alt="Luna" loading="lazy"/></div><div class="story-body"><div class="story-meta"><div class="story-likes"><i data-lucide="heart" width="16" height="16" style="color:#1A3B4C;fill:#1A3B4C"></i><span>189</span></div><span class="story-time">Hace 5 horas</span></div><div class="story-pet">Luna</div><div class="story-desc">Luna después de su chequeo veterinario. ¡Todo perfecto! 🐱 #SaludFelina</div></div></div>
+          <div class="story-card"><div class="story-img-wrap"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80" alt="Rocky" loading="lazy"/></div><div class="story-body"><div class="story-meta"><div class="story-likes"><i data-lucide="heart" width="16" height="16" style="color:#1A3B4C;fill:#1A3B4C"></i><span>312</span></div><span class="story-time">Hace 1 día</span></div><div class="story-pet">Rocky</div><div class="story-desc">Rocky recuperándose después de su cirugía. ¡Gracias Woofly! 🏥</div></div></div>
+          <div class="story-card"><div class="story-img-wrap"><img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&q=80" alt="Bella" loading="lazy"/></div><div class="story-body"><div class="story-meta"><div class="story-likes"><i data-lucide="heart" width="16" height="16" style="color:#1A3B4C;fill:#1A3B4C"></i><span>97</span></div><span class="story-time">Hace 2 días</span></div><div class="story-pet">Bella</div><div class="story-desc">Primera visita de Bella a Woofly. ¡Se portó de maravilla! 🌟</div></div></div>
+          <div class="story-card"><div class="story-img-wrap"><img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=600&q=80" alt="Toby" loading="lazy"/></div><div class="story-body"><div class="story-meta"><div class="story-likes"><i data-lucide="heart" width="16" height="16" style="color:#1A3B4C;fill:#1A3B4C"></i><span>445</span></div><span class="story-time">Hace 3 días</span></div><div class="story-pet">Toby</div><div class="story-desc">Toby listo para su vacunación anual. ¡Salud ante todo! 💉</div></div></div>
+        </div></div>
+        <button class="slide-arrow" onclick="slideNext()"><i data-lucide="chevron-right" width="20" height="20"></i></button>
+      </div>
+      <div class="slide-dots" id="slideDots"></div>
+    </div>
+  </div>
+</div>
+<div class="toast-container" id="toastContainer"></div>
+<script src="../js/shared.js"></script>
+<script src="../js/dashboard.js"></script>
+</body></html>

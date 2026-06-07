@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Woofly — Historial Médico</title>
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/historial.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+  <header class="app-header">
+    <div class="header-left">
+      <div class="header-icon-wrap"><i data-lucide="file-text" color="white" width="28" height="28"></i></div>
+      <div><div class="header-title">Historial Médico Veterinario</div><div class="header-sub">Consulta el historial de tus mascotas</div></div>
+    </div>
+    <div class="header-right">
+      <a href="dashboard.html" class="btn-ghost"><i data-lucide="arrow-left" width="16" height="16"></i> Regresar</a>
+    </div>
+  </header>
+  <div class="content">
+    <div class="hist-controls">
+      <div style="display:flex;align-items:center;gap:8px;color:var(--verde-s);font-size:14px;"><i data-lucide="paw-print" width="16" height="16"></i> Seleccionar Mascota</div>
+      <select class="hist-select" id="histMascotaFilter" onchange="renderHistorial()">
+        <option value="todas">Todas las Mascotas</option>
+        <option value="Max">Max</option><option value="Luna">Luna</option><option value="Rocky">Rocky</option>
+      </select>
+      <button class="btn-orange" onclick="renderHistorial()">Servicios Completados</button>
+      <button class="btn-ghost" style="border-color:var(--gris-borde);color:var(--azul);background:white;">Ver Prescripciones</button>
+    </div>
+    <div id="historialList"></div>
+  </div>
+</div>
+<div class="toast-container" id="toastContainer"></div>
+<script src="../js/shared.js"></script>
+<script src="../js/historial.js"></script>
+</body></html>

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ========================
+   DESIGN TOKENS — WOOFLY
+   ======================== */
+:root {
+  --azul:       #1A3B4C;
+  --terracota:  #E87C5B;
+  --menta:      #EBF3F1;
+  --verde:      #7FB8A3;
+  --verde-s:    #5B756C;
+  --blanco:     #FFFFFF;
+  --gris-bg:    #F4F6F5;
+  --gris-borde: #DDE4E1;
+  --sombra:     0 4px 24px rgba(26,59,76,.10);
+  --sombra-lg:  0 8px 40px rgba(26,59,76,.15);
+  --radio:      14px;
+  --radio-lg:   20px;
+  --trans:      .22s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  background: var(--gris-bg);
+  color: var(--azul);
+  min-height: 100vh;
+}

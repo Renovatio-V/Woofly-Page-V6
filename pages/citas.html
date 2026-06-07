@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Woofly — Citas Veterinarias</title>
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/citas.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+  <header class="app-header">
+    <div class="header-left">
+      <div class="header-icon-wrap"><i data-lucide="calendar-days" color="white" width="28" height="28"></i></div>
+      <div><div class="header-title">Citas Veterinarias</div><div class="header-sub">Agenda y gestiona las citas de tus mascotas</div></div>
+    </div>
+    <div class="header-right">
+      <a href="dashboard.html" class="btn-ghost"><i data-lucide="arrow-left" width="16" height="16"></i> Regresar</a>
+      <button class="btn-orange" onclick="openModal('modalNuevaCita')"><i data-lucide="plus" width="16" height="16"></i> Nueva Cita</button>
+    </div>
+  </header>
+  <div class="content">
+    <div class="filter-bar">
+      <span class="filter-label"><i data-lucide="filter" width="15" height="15"></i> Filtrar:</span>
+      <button class="filter-btn active" onclick="filterCitas('todas',this)">Todas (<span class="citas-count-todas">0</span>)</button>
+      <button class="filter-btn" onclick="filterCitas('pendiente',this)">Pendientes (<span class="citas-count-pendiente">0</span>)</button>
+      <button class="filter-btn" onclick="filterCitas('confirmada',this)">Confirmadas (<span class="citas-count-confirmada">0</span>)</button>
+      <button class="filter-btn" onclick="filterCitas('completada',this)">Completadas (<span class="citas-count-completada">0</span>)</button>
+    </div>
+    <div id="citasList"></div>
+    <div class="empty-box" id="citasEmpty" style="display:none;">
+      <div class="empty-icon"><i data-lucide="calendar-x" width="32" height="32"></i></div>
+      <div class="empty-title">No hay citas programadas</div>
+      <div class="empty-sub">Comienza creando tu primera cita</div>
+      <button class="btn-dark" onclick="openModal('modalNuevaCita')"><i data-lucide="plus" width="16" height="16"></i> Crear Primera Cita</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modalNuevaCita">
+  <div class="modal-box">
+    <div class="modal-title">📅 Nueva Cita</div>
+    <div class="form-group"><label class="form-label"><i data-lucide="paw-print" width="15" height="15"></i> Mascota</label>
+      <select class="form-input" id="citaMascota"><option value="">Seleccionar mascota</option><option value="Max">Max (Labrador)</option><option value="Luna">Luna (Gato Siamés)</option><option value="Rocky">Rocky (Bulldog)</option></select></div>
+    <div class="form-group"><label class="form-label"><i data-lucide="stethoscope" width="15" height="15"></i> Tipo de servicio</label>
+      <select class="form-input" id="citaServicio"><option value="">Seleccionar servicio</option><option value="Consulta General">Consulta General</option><option value="Vacunación">Vacunación</option><option value="Desparasitación">Desparasitación</option><option value="Grooming">Grooming</option><option value="Cirugía">Cirugía</option></select></div>
+    <div class="form-group"><label class="form-label"><i data-lucide="calendar" width="15" height="15"></i> Fecha</label><input type="date" class="form-input" id="citaFecha" /></div>
+    <div class="form-group"><label class="form-label"><i data-lucide="clock" width="15" height="15"></i> Hora</label>
+      <select class="form-input" id="citaHora"><option value="">Seleccionar hora</option><option>08:00</option><option>09:00</option><option>10:00</option><option>11:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option></select></div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('modalNuevaCita')">Cancelar</button>
+      <button class="btn-dark" onclick="guardarCita()">Guardar Cita</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="../js/shared.js"></script>
+<script src="../js/citas.js"></script>
+</body></html>

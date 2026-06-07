@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Woofly — Mi Perfil</title>
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/perfil.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+  <header class="app-header">
+    <div class="header-left">
+      <div class="header-icon-wrap"><i data-lucide="user-circle" color="white" width="28" height="28"></i></div>
+      <div><div class="header-title">Mi Perfil</div><div class="header-sub">Gestiona tu información y la de tus mascotas</div></div>
+    </div>
+    <div class="header-right">
+      <a href="dashboard.html" class="btn-ghost"><i data-lucide="arrow-left" width="16" height="16"></i> Regresar</a>
+    </div>
+  </header>
+  <div class="content">
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('datosPersonales',this)">Datos Personales</button>
+      <button class="tab-btn" onclick="switchTab('misMascotas',this)">Mis Mascotas</button>
+      <button class="tab-btn" onclick="switchTab('seguridad',this)">Seguridad</button>
+    </div>
+    <div class="tab-content active" id="tab-datosPersonales">
+      <div class="info-card">
+        <div class="info-card-title">Información Personal</div>
+        <div class="form-grid">
+          <div><label class="profile-form-label"><i data-lucide="user" width="14" height="14"></i> Nombre Completo</label><input class="profile-form-input" type="text" value="Juan Pérez Martínez" id="pfNombre" /></div>
+          <div><label class="profile-form-label"><i data-lucide="mail" width="14" height="14"></i> Correo Electrónico</label><input class="profile-form-input" type="email" value="juan.perez@email.com" id="pfEmail" /></div>
+          <div><label class="profile-form-label"><i data-lucide="phone" width="14" height="14"></i> Teléfono</label><input class="profile-form-input" type="tel" value="+1 234 567 8900" id="pfTelefono" /></div>
+          <div><label class="profile-form-label"><i data-lucide="calendar" width="14" height="14"></i> Fecha de Nacimiento</label><input class="profile-form-input" type="date" value="1990-05-15" id="pfNacimiento" /></div>
+          <div class="full"><label class="profile-form-label"><i data-lucide="map-pin" width="14" height="14"></i> Dirección</label><input class="profile-form-input" type="text" value="Av. Principal 123, Ciudad" id="pfDireccion" /></div>
+        </div>
+        <button class="btn-save" onclick="guardarPerfil()">Guardar Cambios</button>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-misMascotas"><div class="pet-grid" id="petGrid"></div></div>
+    <div class="tab-content" id="tab-seguridad">
+      <div class="info-card">
+        <div class="info-card-title">Cambiar Contraseña</div>
+        <div class="security-item"><label class="profile-form-label"><i data-lucide="lock" width="14" height="14"></i> Contraseña Actual</label><input class="profile-form-input" type="password" placeholder="••••••••" /></div>
+        <div class="security-item"><label class="profile-form-label"><i data-lucide="key" width="14" height="14"></i> Nueva Contraseña</label><input class="profile-form-input" type="password" placeholder="••••••••" /></div>
+        <div class="security-item"><label class="profile-form-label"><i data-lucide="shield-check" width="14" height="14"></i> Confirmar Nueva Contraseña</label><input class="profile-form-input" type="password" placeholder="••••••••" /></div>
+        <button class="btn-save" onclick="showToast('Contraseña actualizada correctamente','success')">Actualizar Contraseña</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast-container" id="toastContainer"></div>
+<script src="../js/shared.js"></script>
+<script src="../js/perfil.js"></script>
+</body></html>
